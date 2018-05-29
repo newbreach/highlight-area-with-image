@@ -1,0 +1,14 @@
+{
+  "name": "highlight-area-with-image",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "author": "qunpeng li",
+  "license": "ISC",
+  "dependencies": {
+    "get-pixels": "^3.3.0"
+  }
+}

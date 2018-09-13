@@ -6,17 +6,21 @@ var getHighlightArea = function (xa, ya, w, h, pixels) {
   }
   console.info(`图像宽度${xa},高度${ya};选择高亮区域大小面积: ${w}(宽)*${h}(高)`);
   //x，y轴数量,xy轴总数量
-  let xc = xa - Math.floor(w / 2) * 2,
+  var xc = xa - Math.floor(w / 2) * 2,
     yc = ya - Math.floor(h / 2) * 2,
-    xyc = xc * yc;
-  let totalval = 0, point = { x: -1, y: -1 };
-  let tmptotalval = 0;
+    xyc = xc * yc,
+    totalval = 0, point = { x: -1, y: -1 },
+    tmptotalval = 0,
+    x = 0, 
+    y = 0, 
+    tx = 0, 
+    ty = 0;
   console.info(`能够比对的区域数量：${xc}*${yc}=${xyc}`);
-  for (let x = 0; x < xc; x++) {
-    for (let y = 0; y < yc; y++) {
+  for (x = 0; x < xc; x++) {
+    for (y = 0; y < yc; y++) {
       tmptotalval = 0;
-      for (let tx = x; tx < x + w; tx++) {
-        for (let ty = y; ty < y + h; ty++) {
+      for (tx = x; tx < x + w; tx++) {
+        for (ty = y; ty < y + h; ty++) {
           tmptotalval += pixels.get(tx, ty, 0);
           tmptotalval += pixels.get(tx, ty, 1);
           tmptotalval += pixels.get(tx, ty, 2);

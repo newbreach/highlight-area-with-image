@@ -1,6 +1,6 @@
 var getHighlightAreaPoint = require('../index.js').getHighlightAreaPoint;
  console.time('area');
-getHighlightAreaPoint("test/test2.jpg", { width: 19, height: 19 }, function (err, result) {
+getHighlightAreaPoint("test/test2.jpg", { width: 7, height: 7 }, function (err, result) {
   if (err) {
     console.error(err);
     return;
